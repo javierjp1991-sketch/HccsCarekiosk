@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;600&display=swap');
+
+@theme {
+  --font-sans: "Palatino", "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  --font-display: "Palatino", "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+
+  --color-hcc-blue: #002c72;
+  --color-hcc-cyan: #00c4f9;
+  --color-hcc-gold: #ffb71a;
+  --color-hcc-orange: #ed7623;
+  --color-hcc-purple: #480d67;
+  --color-hcc-green: #69c04b;
+  --color-hcc-gray: #595b5d;
+}
+
+@layer base {
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Houston City College Care Kiosk",
+  "description": "A touch-friendly kiosk application for Houston City College community resources, featuring an attract screen, resource grid, and embedded browser with print support.",
+  "requestFramePermissions": []
+}
