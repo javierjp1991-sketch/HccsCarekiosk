@@ -93,7 +93,7 @@ interface CareResourceGridProps {
 
 export default function CareResourceGrid({ onOpenUrl }: CareResourceGridProps) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-3 sm:gap-4 h-full min-h-0 overflow-y-auto sm:overflow-visible pr-1 sm:pr-0">
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 min-h-0 overflow-y-auto py-2 pr-2">
       {resources.map((resource, index) => (
         <motion.button
           key={resource.id}
@@ -106,34 +106,34 @@ export default function CareResourceGrid({ onOpenUrl }: CareResourceGridProps) {
             damping: 15 
           }}
           whileHover={{ 
-            y: -4,
+            y: -8,
             scale: 1.02,
             borderColor: "var(--color-hcc-gold)",
-            boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.05)"
+            boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
           }}
           whileTap={{ scale: 0.96 }}
           onClick={() => onOpenUrl(resource.url, resource.title)}
           aria-label={`Open ${resource.title} resource`}
-          className="group relative flex flex-col items-center justify-center text-center p-3 sm:p-4 rounded-[1.5rem] sm:rounded-[2rem] bg-white border-2 border-hcc-blue/5 transition-all shadow-sm overflow-hidden h-full min-h-[140px] sm:min-h-0"
+          className="group relative flex flex-col items-center justify-center text-center p-4 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] bg-white border-2 border-hcc-blue/5 transition-all shadow-sm overflow-hidden min-h-[160px] sm:aspect-square lg:aspect-auto lg:min-h-[220px]"
         >
           {/* Subtle accent corner */}
-          <div className="absolute top-0 right-0 w-8 sm:w-12 h-8 sm:h-12 bg-hcc-gold/5 rounded-bl-[1.5rem] sm:rounded-bl-[2rem] group-hover:bg-hcc-gold/20 transition-colors duration-500" />
+          <div className="absolute top-0 right-0 w-12 sm:w-20 h-12 sm:h-20 bg-hcc-gold/5 rounded-bl-[1.5rem] sm:rounded-bl-[3rem] group-hover:bg-hcc-gold/20 transition-colors duration-500" />
           
-          <div className="relative mb-2 sm:mb-3 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-hcc-blue/5 text-hcc-blue group-hover:text-hcc-gold group-hover:bg-hcc-blue group-hover:scale-110 transition-all duration-500 shrink-0">
-            {React.cloneElement(resource.icon as React.ReactElement, { size: 24 })}
+          <div className="relative mb-3 sm:mb-6 p-3 sm:p-5 rounded-xl sm:rounded-2xl bg-hcc-blue/5 text-hcc-blue group-hover:text-hcc-gold group-hover:bg-hcc-blue group-hover:scale-110 transition-all duration-500 shrink-0">
+            {React.cloneElement(resource.icon as React.ReactElement, { size: 32 })}
           </div>
           
           <div className="relative flex flex-col items-center min-h-0">
-            <h3 className="text-sm sm:text-lg font-black text-hcc-blue tracking-tight leading-tight uppercase">
+            <h3 className="text-sm sm:text-xl font-black text-hcc-blue tracking-tight leading-tight uppercase">
               {resource.title}
             </h3>
-            <p className="mt-1 text-[10px] sm:text-xs text-hcc-gray font-medium leading-tight px-1 line-clamp-2">
+            <p className="mt-2 text-[10px] sm:text-sm text-hcc-gray font-medium leading-tight px-2 line-clamp-2 sm:line-clamp-none">
               {resource.description}
             </p>
           </div>
           
           {/* Bottom indicator */}
-          <div className="absolute bottom-2 sm:bottom-3 w-4 sm:w-6 h-1 bg-hcc-blue/10 rounded-full group-hover:bg-hcc-gold group-hover:w-8 sm:group-hover:w-12 transition-all duration-500" />
+          <div className="absolute bottom-3 sm:bottom-6 w-6 sm:w-10 h-1.5 bg-hcc-blue/10 rounded-full group-hover:bg-hcc-gold group-hover:w-16 transition-all duration-500" />
         </motion.button>
       ))}
     </div>
